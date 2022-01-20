@@ -13,4 +13,5 @@ If you use the installed version of blender you need to put the license file nex
 To install the Addon just copy the MinistryOfFlatBridge folder into your blender addons directory and activate it in the Blender Addon Menu.
 
 You can then see the panel when selecting an object in object mode:
+
 ![Screenshot](AutoUVPanelScreenshot.png)
