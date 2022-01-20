@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<ROOT>
+	<AALEVEL>16</AALEVEL> <!-- Level of UI Anti aliasing -->
+	<RESOLUTION_Y>1200</RESOLUTION_Y> <!-- Window resolution Y -->
+	<RESOLUTION_X>1000</RESOLUTION_X> <!-- Window resolution X -->
+	<RESOLUTION>1024</RESOLUTION> <!-- Resolution of texture, to give right amount of island gaps to prevent bleeds. -->
+	<SEPARATE>FALSE</SEPARATE> <!-- Guarantees that all hard edges are separated. Useful for lightmapping and Normalmapping -->
+	<ASPECT>1.000000</ASPECT> <!-- Aspect ratio of pixels. For non square textures. -->
+	<NORMALS>FALSE</NORMALS> <!-- Use the models normals to help classify polygons. -->
+	<OVERLAP>FALSE</OVERLAP> <!-- Overlap identtical parts to take up the same texture space. -->
+	<MIRROR>FALSE</MIRROR> <!-- Overlap mirrored parts to take up the same texture space. -->
+	<EXPERIMENTAL>FALSE</EXPERIMENTAL> <!-- Enable Experimental unwrapping that may not improve results in its corrent state on all models. -->
+	<SUPRESS>FALSE</SUPRESS> <!-- Faulty geometry errors will not be printed to standard out. -->
+	<QUAD>TRUE</QUAD> <!-- Searches the model for triangle pairs that make good quads. Improves the use of patches. -->
+	<WELD>TRUE</WELD> <!-- Merges duplicate vertices, Does not efect the out put polygon or vertext data. -->
+	<FLAT>TRUE</FLAT> <!-- Detects flat areas of soft surfaces in order to minimize their distortion. -->
+	<CONE>TRUE</CONE> <!-- Searches the model for sharp Cones. -->
+	<CONERATIO>0.500000</CONERATIO> <!-- The minimum ratio of a triangle used in a cone. -->
+	<STRIP>TRUE</STRIP> <!-- Searches the model for strips of quads. -->
+	<PATCH>TRUE</PATCH> <!-- Searches the model for grids of quads. -->
+	<PLANES>TRUE</PLANES> <!-- Detect planes. -->
+	<FLATT>0.900000</FLATT> <!-- Minimum normal dot product between two flat polygons. -->
+	<MERGE>TRUE</MERGE> <!-- Merges polygons using unfolding -->
+	<MERGELIMIT>0.000000</MERGELIMIT> <!-- Limit the angle of polygons beeing merged. -->
+	<PRESMOOTH>TRUE</PRESMOOTH> <!-- Soften the mesh before atempting to cut and project. -->
+	<SOFTUNFOLD>TRUE</SOFTUNFOLD> <!-- Atempt to unfold soft surfaces. -->
+	<TUBES>TRUE</TUBES> <!-- Find tube shaped geometry and unwrap it using cylindrical projection. -->
+	<JUNCTIONSDEBUG>TRUE</JUNCTIONSDEBUG> <!-- Find and handle Junctions between tubes. -->
+	<EXTRADEBUG>FALSE</EXTRADEBUG> <!-- Using vertices not sharded by 4 quads as starting points for cutting. -->
+	<ABF>TRUE</ABF> <!-- Using angle based flattening to handle smooth surfaces. -->
+	<SMOOTH>TRUE</SMOOTH> <!-- Cut and project smooth surfaces. -->
+	<REPAIRSMOOTH>TRUE</REPAIRSMOOTH> <!-- Attaches small islands to larger islands on smooth surfaces. -->
+	<REPAIR>TRUE</REPAIR> <!-- Repair edges to make then straight. -->
+	<SQUARE>TRUE</SQUARE> <!-- Finds various individual polygons that hare right angles. -->
+	<RELAX>TRUE</RELAX> <!-- Relax all smooth polygons to minimize distortion. -->
+	<RELAX_ITERATIONS>50</RELAX_ITERATIONS> <!-- The number of iteration loops when relaxing. -->
+	<EXPAND>0.250000</EXPAND> <!-- Expand soft surfaces to make more use of texture space. Experimental, off by default -->
+	<CUTDEBUG>TRUE</CUTDEBUG> <!-- Cut down awkward shapes in order to optimize layout coverage. -->
+	<STRETCH>TRUE</STRETCH> <!-- Stretch any island that is too wide to fit in the image. -->
+	<MATCH>TRUE</MATCH> <!-- Match individual tirangles for better packing. -->
+	<PACKING>TRUE</PACKING> <!-- Pack islands in to a rectangle -->
+	<RASTERIZATION>64</RASTERIZATION> <!-- Resolution of packing rasterization. -->
+	<PACKING_ITERATIONS>4</PACKING_ITERATIONS> <!-- How many times the packer will pack the islands in order to find the optimal island spaceing. -->
+	<SCALETOFIT>0.500000</SCALETOFIT> <!-- Scales islands to fit cavites. -->
+	<VALIDATE>FALSE</VALIDATE> <!-- Validate geometry after each stage and print out any issues found (For debugging only). -->
+	<RAND_ID>1308433869</RAND_ID> <!-- Random id selected first time you run application -->
+</ROOT>
