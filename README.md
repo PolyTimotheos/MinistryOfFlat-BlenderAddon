@@ -11,6 +11,7 @@ I use windows 10 and the portable version of blender which i save in my document
 If you use the installed version of blender you need to put the license file next to the python.exe in blenders install directory.
 
 To install the Addon just copy the MinistryOfFlatBridge folder into your blender addons directory and activate it in the Blender Addon Menu.
+Then put the .exe file of the console variant of MOF into the folder called "mof" of the addon folder. The config file for MOF that i have in the repo might be outdated for your version of MOF.
 
 You can then see the panel when selecting an object in object mode:
 
