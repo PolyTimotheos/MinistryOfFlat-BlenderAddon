@@ -16,4 +16,5 @@ And there's one possible issue to look out for and that's the license file that 
 I use windows 10 and the portable version of blender which i save in my documents folder (this is important!) and the license file sits next to the blender.exe. If you use the installed version of blender you need to put the license file next to the python.exe in blenders install directory.
 
 You can then see the panel when selecting an object in object mode:
+
 ![Screenshot](AutoUVPanelScreenshot.png)
