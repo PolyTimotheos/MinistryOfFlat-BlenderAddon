@@ -1,3 +1,7 @@
+
+## Disclaimer
+I am in no way affiliated with "Quel Solaar" http://www.quelsolaar.com/ministry_of_flat/ and just build and shared this python addon for blender for my own use. If you want to actually make use of this addon, then you'll also have to acquire a license from Quel Solaar for Ministry Of Flat. The dev behind the company is a really nice guy and cares about his product, so it's really money well spent.
+
 ## Description
 This is a simple bridge to use MinistryOfFlat console variant http://www.quelsolaar.com/ministry_of_flat/ directly in blender and quickly and automatically unwrap meshes.
 Currently Blender 3.0 is not supported yet but 2.8x and 2.9x should all work.
