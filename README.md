@@ -1,5 +1,5 @@
 ## Description
-This is a simple bridge to use MinistryOfFlat console variant directly through blender.
+This is a simple bridge to use MinistryOfFlat console variant http://www.quelsolaar.com/ministry_of_flat/ directly in blender and quickly and automatically unwrap meshes.
 Currently Blender 3.0 is not supported yet but 2.8x and 2.9x should all work.
 
 ## How it works
