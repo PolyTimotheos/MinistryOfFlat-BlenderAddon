@@ -14,10 +14,10 @@
 bl_info = {
 	"name" : "MinistryOfFlatBridge",
 	"author" : "Tim Mayer",
-	"wiki_url": "https://github.com/",
+	"wiki_url": "https://github.com/PolyTimotheos/MinistryOfFlat-BlenderAddon",
 	"description" : "This script exports the current mesh to the auto-uv program 'Ministry of Flat' and then reimports and applies the result. Go to http://www.ministryofflat.com/ for a liscence, it's really an incredible tool",
 	"blender" : (2, 80, 0),
-	"version" : (0, 0, 4),
+	"version" : (0, 0, 5),
 	"location": "3D View > Toolbox",
 	"category": "Object"
 }
