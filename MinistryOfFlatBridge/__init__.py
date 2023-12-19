@@ -12,24 +12,34 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 bl_info = {
-    "name" : "MinistryOfFlatBridge",
-    "author" : "Tim Mayer",
-    "wiki_url": "https://github.com/",
-    "description" : "This script exports the current mesh to the auto-uv program 'Ministry of Flat' and then reimports and applies the result. Go to http://www.ministryofflat.com/ for a liscence, it's really an incredible tool",
-    "blender" : (2, 80, 0),
-    "version" : (0, 0, 4),
+	"name" : "MinistryOfFlatBridge",
+	"author" : "Tim Mayer",
+	"wiki_url": "https://github.com/",
+	"description" : "This script exports the current mesh to the auto-uv program 'Ministry of Flat' and then reimports and applies the result. Go to http://www.ministryofflat.com/ for a liscence, it's really an incredible tool",
+	"blender" : (2, 80, 0),
+	"version" : (0, 0, 4),
 	"location": "3D View > Toolbox",
 	"category": "Object"
 }
 
-# from . import auto_load
-
 import bpy
+from .mofautouvmulti_op import MOFUVMULTI_OT_Operator
+from .mofautouv_panel import MOFUV_PT_Panel
+from .mofautouv_panel import MOFUV_Properties
 
-# from . mofautouv_op import MOFUV_OT_Operator
-from . mofautouvmulti_op import MOFUVMULTI_OT_Operator
-from . mofautouv_panel import MOFUV_PT_Panel
+# Register
+def register():
+	bpy.utils.register_class(MOFUV_Properties)
+	bpy.utils.register_class(MOFUV_PT_Panel)
+	bpy.utils.register_class(MOFUVMULTI_OT_Operator)
+	bpy.types.Scene.mofuv_props = bpy.props.PointerProperty(type=MOFUV_Properties)
 
-classes = (MOFUVMULTI_OT_Operator, MOFUV_PT_Panel)
+# Unregister
+def unregister():
+	del bpy.types.Scene.mofuv_props
+	bpy.utils.unregister_class(MOFUVMULTI_OT_Operator)
+	bpy.utils.unregister_class(MOFUV_PT_Panel)
+	bpy.utils.unregister_class(MOFUV_Properties)
 
-register, unregister = bpy.utils.register_classes_factory(classes)
+if __name__ == "__main__":
+	register()

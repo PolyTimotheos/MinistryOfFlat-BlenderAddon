@@ -2,6 +2,8 @@ import bpy
 import os
 import subprocess
 import time
+from .mofautouv_panel import MOFUV_Properties
+
 
 class MOFUVMULTI_OT_Operator(bpy.types.Operator):
 	bl_idname = "view3d.mofmulti_autouv"
@@ -9,11 +11,37 @@ class MOFUVMULTI_OT_Operator(bpy.types.Operator):
 	bl_description = "Auto UV a single object"
 
 	def execute(self, context):
-		addonPath = bpy.utils.user_resource('SCRIPTS', "addons")
+		#Set To Object Mode
+		bpy.ops.object.mode_set(mode='OBJECT')
+
+		#Get Properties
+		mofuv_props = context.scene.mofuv_props
+		useNormals = mofuv_props.useNormals
+		separateHardEdges = mofuv_props.separateHardEdges
+		useNormalCommand = '-normals TRUE'
+		useSeperateHardEdgesCommand = '-separate FALSE'
+
+		if useNormals:
+			useNormalCommand = '-normals TRUE'
+		else:
+			useNormalCommand = '-normals FALSE'
+		
+		if separateHardEdges:
+			useSeperateHardEdgesCommand = '-separate TRUE'
+		else:
+			useSeperateHardEdgesCommand = '-separate FALSE'
+
+		#Set Paths
+		if (3, 00, 0) <= bpy.app.version:
+			addonPath = bpy.utils.user_resource('SCRIPTS', path="addons")
+		else:
+			addonPath = bpy.utils.user_resource('SCRIPTS', "addons")
 		mof_path = os.path.join(addonPath, 'MinistryOfFlatBridge\\mof\\UnWrapConsole3.exe')
 		base_file = os.path.join(addonPath, 'MinistryOfFlatBridge\\mof\\autoUVbase.obj')
 		result_file = os.path.join(addonPath, 'MinistryOfFlatBridge\\mof\\autoUVresult.obj')
-		command = r'"{}"'.format(mof_path) + ' ' + r'"{}"'.format(base_file) + ' ' + r'"{}"'.format(result_file)
+		command = r'"{}"'.format(mof_path) + ' ' + r'"{}"'.format(base_file) + ' ' + r'"{}"'.format(result_file) + ' ' + useNormalCommand + ' ' + useSeperateHardEdgesCommand
+
+		#Execute
 		selected_obj = bpy.context.selected_objects
 		active_obj = bpy.context.active_object
 		for BaseObject in selected_obj:
@@ -35,7 +63,10 @@ class MOFUVMULTI_OT_Operator(bpy.types.Operator):
 				while not os.path.exists(result_file):
 					time.sleep(1)
 				if os.path.isfile(result_file):
-					bpy.ops.import_scene.obj(filepath=result_file, filter_glob="*.obj", use_edges=True, use_smooth_groups=True, use_split_objects=False, use_split_groups=False, use_groups_as_vgroups=False, use_image_search=False, split_mode='OFF', global_clight_size=0.0, axis_forward='-Z', axis_up='Y')
+					if (3, 00, 0) <= bpy.app.version:
+						bpy.ops.import_scene.obj(filepath=result_file, filter_glob="*.obj", use_edges=True, use_smooth_groups=True, use_split_objects=True, use_split_groups=False, use_groups_as_vgroups=False, use_image_search=False, split_mode='ON', global_clamp_size=0.0, axis_forward='-Z', axis_up='Y')
+					else:
+						bpy.ops.import_scene.obj(filepath=result_file, filter_glob="*.obj", use_edges=True, use_smooth_groups=True, use_split_objects=True, use_split_groups=False, use_groups_as_vgroups=False, use_image_search=False, split_mode='ON', global_clight_size=0.0, axis_forward='-Z', axis_up='Y')
 				else:
 					raise ValueError("%s isn't a file!" % result_file)
 				print("------------ Transfer UVs ------------")
