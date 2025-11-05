@@ -21,4 +21,5 @@ I use windows 10 and the portable version of blender which i save in my document
 
 You can then see the panel when selecting an object in object mode:
 
-![Screenshot](AutoUVPanelScreenshot.png)
+<img width="463" height="1351" alt="image" src="https://github.com/user-attachments/assets/4da6c378-71e9-4202-b618-5cf90b48ba79" />
+
